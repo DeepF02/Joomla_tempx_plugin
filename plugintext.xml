@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.1" type="plugin" group="content" method="upgrade">
+	<name>my Plugin</name>
+	<author>Jatin Salve</author>
+	<creationDate>June 2021</creationDate>
+	<copyright>Copyright (C) 2021</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>jasalve_b19@el.vjti.ac.in</authorEmail>
+	<authorUrl>https://github.com/jatinS-dev</authorUrl>
+	<version>0.0.1</version>
+	<description>PLG_CONVERTS_TEXT_TO_HEADLINE</description>
+	<files>
+		<filename >myplugin.xml</filename>
+		<filename plugin="myplugin">myplugin.php</filename>
+		<filename >categories.php</filename>
+	</files>
+	<languages>
+		<language tag="en-GB">en-GB.plg_search_categories.ini</language>
+		<language tag="en-GB">en-GB.plg_search_categories.sys.ini</language>
+	</languages>
+	<config>
+                <fields name="params">
+                        <fieldset name="basic">
+                                <field name="alt-text"  type="text" default="" label="Alternative Text" 
+                                description="Enter text here it will show headline on UI" />
+                        </fieldset>
+                </fields>
+        </config>
+</extension>
