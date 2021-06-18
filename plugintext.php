@@ -1,24 +1,28 @@
 <?php
+/**
+ * @copyright	Copyright (C) 2005 - 2008 Open Source Matters. All rights reserved.
+ * @license		GNU/GPL, see LICENSE.php
+ */
+defined('_JEXEC') or die('Access Deny');
+jimport( 'joomla.plugin.plugin' );
 
-// no direct access
-defined('_JEXEC') or die;
-
-// $document = JFactory::getDocument();
-// $document->addScriptDeclaration('
-        
-// ');
-
-class plgContentPluginText extends JPlugin
+class plgSystemplg_system_addtext extends JPlugin 
 {
-        public function onContentAfterTitle($context, &$article, &$params, $limitstart)
-        {
-                
-                if($this->params->get('alt-text'))
-                        return '<h1>'.$this->params->get('alt-text').'</h1>';
-                        
-                else
-                        return "Enter your text here!";
+public function onBeforeCompileHead()
+    {    
+        
+     $val =$this-> params->get('param'); 
+     $document = JFactory::getDocument();
+     $document->addScriptDeclaration(' window.addEventListener("DOMContentLoaded", function() {
+          const ans = document.querySelectorAll("h1,h2").length; 
+          for(let i = 0; i < ans; i++) {
+              const attachthis =document.querySelectorAll("h1,h2")[i].innerHTML = "'. $val.'" + document.querySelectorAll("h1,h2")[i].innerHTML ;
+             }
+
         }
+      );');
+       return true;
+    
+    } 
 }
 
-?>
