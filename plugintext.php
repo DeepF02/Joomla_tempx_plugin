@@ -6,12 +6,12 @@
 defined('_JEXEC') or die('Access Deny');
 jimport( 'joomla.plugin.plugin' );
 
-class plgSystemplg_system_addtext extends JPlugin 
+class plgSystemplugintext extends JPlugin 
 {
 public function onBeforeCompileHead()
     {    
         
-     $val =$this-> params->get('param'); 
+     $val = $this->params->get('alt-text'); 
      $document = JFactory::getDocument();
      $document->addScriptDeclaration(' window.addEventListener("DOMContentLoaded", function() {
           const ans = document.querySelectorAll("h1,h2").length; 

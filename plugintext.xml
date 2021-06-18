@@ -10,9 +10,9 @@
 	<version>0.0.1</version>
 	<description>PLG_CONVERTS_TEXT_TO_HEADLINE</description>
 	<files>
-		<filename >myplugin.xml</filename>
-		<filename plugin="myplugin">myplugin.php</filename>
-		<filename >categories.php</filename>
+		<filename >plugintext.xml</filename>
+		<filename plugin="plugintext">plugintext.php</filename>
+		<filename >index.html</filename>
 	</files>
 	<languages>
 		<language tag="en-GB">en-GB.plg_search_categories.ini</language>
