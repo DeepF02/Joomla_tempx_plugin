@@ -1,5 +1,5 @@
 # Joomla_plugin
-Joomla Plugin which converts user input text to Headline (h1) tag.
+Joomla Plugin adds the user input to headline
 
 ## How to install it?
 Clone the repository into your Local Machine
