@@ -8,26 +8,15 @@ jimport( 'joomla.plugin.plugin' );
 
 class plgSystemPlugintext extends JPlugin
 {
-    /**
-     * Constructor.
-     *
-     * @param   object &$subject The object to observe.
-     * @param   array $config An optional associative array of configuration settings.
-     *
-     * @since   1.0
-     */
+   
     public function __construct(&$subject, $config)
     {
-        // Calling the parent Constructor
         parent::__construct($subject, $config);
-
-        // Do some extra initialisation in this constructor if required
     }
 
     public function onBeforeCompileHead()
     {
-        //echo 'compile';
-        //only going to run these in the backend for now
+      
         $app = JFactory::getApplication();
         $document = JFactory::getDocument();
         $heading_text = $this->params->get('heading_text', 1);
