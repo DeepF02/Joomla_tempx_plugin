@@ -19,11 +19,10 @@
 		<language tag="en-GB">en-GB.plg_search_categories.sys.ini</language>
 	</languages>
 	<config>
-                <fields name="params">
-                        <fieldset name="basic">
-                                <field name="alt-text"  type="text" default="" label="Alternative Text" 
-                                description="Enter text here it will show headline on UI" />
-                        </fieldset>
-                </fields>
-        </config>
+        <fields name="params">
+            <fieldset name="basic">
+            <field name="heading_text" type="text" description="Enter the text here- " label="Heading text"/>
+            </fieldset>
+        </fields>
+    </config>
 </extension>

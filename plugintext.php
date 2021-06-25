@@ -6,23 +6,44 @@
 defined('_JEXEC') or die('Access Deny');
 jimport( 'joomla.plugin.plugin' );
 
-class plgSystemplugintext extends JPlugin 
+class plgSystemPlugintext extends JPlugin
 {
-public function onBeforeCompileHead()
-    {    
-        
-     $val = $this->params->get('alt-text'); 
-     $document = JFactory::getDocument();
-     $document->addScriptDeclaration(' window.addEventListener("DOMContentLoaded", function() {
-          const ans = document.querySelectorAll("h1,h2").length; 
-          for(let i = 0; i < ans; i++) {
-              const attachthis =document.querySelectorAll("h1,h2")[i].innerHTML = "'. $val.'" + document.querySelectorAll("h1,h2")[i].innerHTML ;
-             }
+    /**
+     * Constructor.
+     *
+     * @param   object &$subject The object to observe.
+     * @param   array $config An optional associative array of configuration settings.
+     *
+     * @since   1.0
+     */
+    public function __construct(&$subject, $config)
+    {
+        // Calling the parent Constructor
+        parent::__construct($subject, $config);
 
+        // Do some extra initialisation in this constructor if required
+    }
+
+    public function onBeforeCompileHead()
+    {
+        //echo 'compile';
+        //only going to run these in the backend for now
+        $app = JFactory::getApplication();
+        $document = JFactory::getDocument();
+        $heading_text = $this->params->get('heading_text', 1);
+        if ($app->isAdmin()) {
+
+            $document->addScriptDeclaration("jQuery.noConflict();  
+        jQuery(document).ready(function(){
+               
+             var heading_text = '$heading_text';
+             jQuery('.page-title').text(heading_text);
+            }); 
+       
+        ");
+            return;
         }
-      );');
-       return true;
-    
-    } 
-}
 
+    }
+
+}
